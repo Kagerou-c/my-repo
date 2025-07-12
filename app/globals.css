@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+body{
+  background-color: rgb(111, 210, 228);
+}
+
+.todo{
+  display : grid;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-Width: 850px;
+  margin: 20px auto;
+  padding: 20px ;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: #817d7d;
+  background-color: white;
+}
+
+.todo h1{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 50px;
+}
+
+.task-input{
+  display: flex;
+  margin-top: 20px;;
+  border-radius: 10px ;
+  border: #817d7d solid 2px;
+  padding: 10px;
+}
+
+.task-input button{
+  margin-left: 50px;
+  border-radius: 8px;
+  width: 100px;
+  border: #817d7d solid 2px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.task-input input{
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  border: #817d7d solid 2px;
+  font-family: 'Courier New', Courier, monospace;
+  padding:10px;
+}
+
+.task{
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.task-item{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.task-item button{
+  display: flex;
+  margin-left: 20px;
+}
+
+.task-item span{
+  padding-right: 20px;
+  white-space: wrap;
+}
+
+.edit-task{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.edit-task button{
+  display: flex;
+  margin-left: 20px;
+}
+
+.edit-task input{
+  width: 200px;
+  height: 50px;
+  border-radius: 8px;
+  border: #817d7d solid 2px;
+  font-family: 'Courier New', Courier, monospace;
+  padding:10px;
+}
+
+p{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin-top: 30px;
+}
