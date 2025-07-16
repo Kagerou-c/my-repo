@@ -1,5 +1,9 @@
 'use client';
 import { useState, useRef, useEffect } from "react";
+import InputComponent from "./edit component/input";
+import DisplayButtonComponen from "./display componen/button display";
+import ButtonEditComponent from "./edit component/button";
+import TambahTaskComponen from "./tambah Task";
 
 export default function LogicTodo(){
 
@@ -105,20 +109,17 @@ export default function LogicTodo(){
     }
   
     return(
-        <div
-        className="todo">
+        <div className="todo">
 
             <h1> Todo List 📝</h1>
 
-            <div
-            className = "task-input">
-        <input 
-        type="text"
-        placeholder="masukan tugas"
-        value={input}
-        onChange={(e)=>setInput(e.target.value)}
-        />
-        <button onClick={handlerClick} disabled={!input}>add task</button>
+        <div
+        className = "task-input">
+
+         <TambahTaskComponen
+         value={input}
+         onChangeValue={(e)=>setInput(e)}
+         onHandleClick={handlerClick}/>
         </div>
 
 
@@ -134,31 +135,25 @@ export default function LogicTodo(){
 
                
                  {edit && id===item.id?
-        <div
-        className="edit-task">
-             <input 
-        type="text"
-        ref={(el)=>ref.current[index] = el}
-        placeholder="masukan tugas"
-        value={editInput}
-        onChange={(e)=>setEditINput(e.target.value)}
-        />
-        <button onClick={()=>handlerEdit(item.id, "selesai")}>selesai ✅</button>
 
-        <button onClick={()=>handlerEdit(item.id, "batal")}>batal ❌</button>
+        <div className="edit-task">
+             <InputComponent 
+        ref={(el)=>ref.current[index] = el}
+        value={editInput}
+        onChangeValue={(e)=>setEditINput(e)}/>
+
+        <ButtonEditComponent
+        onHandler={(eve)=>handlerEdit(item.id, eve)}/>
 
         </div> : 
 
-        <div
-        className="task-item">
+        <div className="task-item">
 
         <span>{item.tugas}</span>
 
-        <button onClick={()=>handlerTask(item.id, "submit")}>✅submit</button>
-
-        <button onClick={()=>handlerTask(item.id,"delete")}>❌delete</button>
-
-        <button onClick={()=>editTask(item.id, index)}>✏️edit</button>
+        <DisplayButtonComponen
+        onHandler = {(e)=>handlerTask(item.id, e)}
+        onEdit={()=>editTask(item.id, index)}/>
         </div>
         } 
 

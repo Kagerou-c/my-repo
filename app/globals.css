@@ -71,9 +71,11 @@ body{
   border: black solid 2px;
 }
 
-.task-item button{
+.task-item .button{
   display: flex;
   margin-left: 20px;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 .task-item span{
@@ -95,9 +97,10 @@ body{
   border: black solid 2px;
 }
 
-.edit-task button{
+.edit-task .button-edit{
   display: flex;
   margin-left: 20px;
+  gap: 20px;
 }
 
 .edit-task input{
